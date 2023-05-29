@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Pdfs</h1>
+
+<%= button_to "Generate Pdf" , pdfs_generate_pdf_path %> <br><br>
+<a href="/uploads/file.pdf" download="file.pdf">Download PDF in html</a><br>
+<%= link_to 'Download PDF rails', '/uploads/file.pdf', download: 'file.pdf' %><br>
+
+
+
+
+<div id="pdfs">
+  <% @pdfs.each do |pdf| %>
+    <%= render pdf %>
+    <p>
+      <%= link_to "Show this pdf", pdf %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New pdf", new_pdf_path %>
